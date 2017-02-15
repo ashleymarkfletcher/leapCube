@@ -20,7 +20,7 @@ class Cube{
   }
   
   void update(){
-    life = life-3;
+    life = life-5;
     if(life == 0) finished = true;
   }
   
@@ -31,13 +31,17 @@ class Cube{
     rotateZ(mRoll);
     rotateY(mYaw);
     
-    float c = map(xPos, 0, width, 0, 255);
-    float s = map(yPos, 0, height, 0, 255);
-    float d = map(zPos, -20, 200, 0, 255);
+    //float c = map(xPos, 0, width, 0, 255);
+    //float s = map(yPos, 0, height, 0, 255);
+        float c = map(life, 0, 255, 255, 0);
+    //float s = map(yPos, 0, height, 0, 255);
+    //float d = map(zPos, -20, 200, 0, 255);
 
-    fill(d, s, c, life);
+    fill(c, life, life, life);
+    //fill(c, life, life);
+
     noStroke();
-    box(200, 200, 200);  
+    box(random(50,70));  
     popMatrix(); 
   }
   
